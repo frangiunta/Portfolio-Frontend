@@ -30,7 +30,7 @@ public getExperiencias():void{
   );
       }
       public onAddExperiencia(addForm: NgForm): void {
-        document.getElementById('add-experiencia-form').click();
+        document.getElementById('add-employee-form').click();
         this.experienciaService.addExperiencia(addForm.value).subscribe(
           (response: Experiencia) => {
             console.log(response);
