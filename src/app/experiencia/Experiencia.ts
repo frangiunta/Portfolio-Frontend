@@ -4,7 +4,7 @@ export interface Experiencia{
     empresa: string;
     imgUrl: string;
     fecha: string;
-    experienciacode: string;
+    experienciaCode: string;
     nombre: string;
     resumen:string;
 }
