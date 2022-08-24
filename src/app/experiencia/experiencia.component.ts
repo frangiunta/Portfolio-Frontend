@@ -30,7 +30,7 @@ public getExperiencias():void{
   );
       }
       public onAddExperiencia(addForm: NgForm): void {
-        document.getElementById('add-employee-form').click();
+        document.getElementById('add-experiencia-form').click();
         this.experienciaService.addExperiencia(addForm.value).subscribe(
           (response: Experiencia) => {
             console.log(response);
@@ -68,23 +68,26 @@ public getExperiencias():void{
         );
       }
 
-public onOpenModal(experiencia: Experiencia, mode: string): void {
-  const container = document.getElementById('main-exp-container');
+public onOpenModal(experiencia: Experiencia, mode?: string): void {
+  const container = document.getElementById('main-container');
   const button = document.createElement('button');
   button.type = 'button';
   button.style.display = 'none';
   button.setAttribute('data-toggle', 'modal');
-  if (mode === 'addexp') {
-    this.experiencia=experiencia;
-    button.setAttribute('data-target', '#addExperienciaModal');
-  }
-  if (mode === 'editexp') {
+  
+  if (mode === 'edit') {
     this.editExperiencia = experiencia;
-    button.setAttribute('data-target', '#updateExperienciaModal');
+    button.setAttribute('data-target', '#updateExperiencia');
   }
-  if (mode === 'deleteexp') {
+  
+  if (mode === 'add') {
+    this.experiencia=experiencia;
+    button.setAttribute('data-target', '#addExperiencia');
+  }
+
+  if (mode === 'delete') {
     this.deleteExperiencia = experiencia;
-    button.setAttribute('data-target', '#deleteExperienciaModal');
+    button.setAttribute('data-target', '#deleteExperiencia');
   }
   container.appendChild(button);
   button.click();
