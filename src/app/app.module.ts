@@ -15,6 +15,7 @@ import { UsuarioService } from './perfil/usuario.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ExperienciaService } from './experiencia/experiencia.service';
 import { FormsModule } from '@angular/forms';
+import { EducacionService } from './educacion/educacion.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,HttpClientModule,FormsModule
   ],
-  providers: [UsuarioService,ExperienciaService],
+  providers: [UsuarioService,ExperienciaService,EducacionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
