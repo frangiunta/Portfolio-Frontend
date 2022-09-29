@@ -1,8 +1,10 @@
+<div id="blackbackground">
 <div *ngFor="let skill of skills">
    <div>
       <h1>{{skill.nombre}}</h1>
    </div>
    <div id="progress">
    <mat-progress-bar mode="determinate" value="{{skill.porcentaje}}"></mat-progress-bar>
+</div>
 </div>
 </div>
