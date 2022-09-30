@@ -15,6 +15,9 @@
       </div>
     </div>
  </div>
+
+ 
+ <!-- update Modal -->
  <a (click)="onOpenModal(null,'add')" class="btn btn-primary tooltips"><i class="fa fa-plus"><span class="sr-only">Agregar experiencia</span></i></a>
  <div class="modal fade" id="updateExperiencia" tabindex="-1" aria-labelledby="employeeEditModalLabel" aria-hidden="true">
    <div class="modal-dialog" role="document">
@@ -30,7 +33,6 @@
                   <input type="text" ngModel="{{editExperiencia?.nombre}}" name="nombre" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Ingrese el nombre del cargo">
                </div>
                <input type="hidden" ngModel="{{editExperiencia?.id}}" name="id" class="form-control" id="id" placeholder="Email">
-               
                <div class="form-group">
                   <label for="name">Empresa</label>
                   <input type="text" ngModel="{{editExperiencia?.empresa}}" name="empresa" class="form-control" id="empresa" placeholder="Empresa">
@@ -79,6 +81,7 @@
       </div>
     </div>
 
+     <!-- add Modal -->
     <div class="modal fade" id="addExperiencia" role="dialog" tabindex="-1" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
