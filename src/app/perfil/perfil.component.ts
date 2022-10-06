@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario} from './Usuario';
-import { UsuarioService} from './usuario.service';
+import { Usuario} from 'src/app/interfaces/Usuario';
+import { UsuarioService} from '../servicios/usuario.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { FormsModule } from '@angular/forms';

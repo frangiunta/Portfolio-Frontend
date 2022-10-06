@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Educacion } from './Educacion';
-import { EducacionService } from './educacion.service';
+import { Educacion } from 'src/app/interfaces/Educacion';
+import { EducacionService } from '../servicios/educacion.service';
 import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-educacion',
@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
+
   public educaciones:Educacion[]=[];
   public editEducacion:Educacion;
   public deleteEducacion:Educacion;
@@ -91,5 +92,6 @@ public onOpenModal(educacion: Educacion, mode?: string): void {
   }
   container.appendChild(button);
   button.click();
+
 }}
 

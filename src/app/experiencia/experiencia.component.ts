@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-import { ExperienciaService } from './experiencia.service';
-import { Experiencia } from './Experiencia';
+import { ExperienciaService } from 'src/app/servicios/experiencia.service';
+import { Experiencia } from 'src/app/interfaces/Experiencia';
 import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-experiencia',
