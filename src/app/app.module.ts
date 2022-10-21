@@ -2,9 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { RedesComponent } from './toolbar/redes/redes.component';
-import { BannerAPComponent } from './toolbar/banner/banner-ap/banner-ap.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { EducacionComponent } from './educacion/educacion.component';
@@ -22,24 +19,26 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent,
-    RedesComponent,
-    BannerAPComponent,
     PerfilComponent,
     ExperienciaComponent,
     EducacionComponent,
     BannerComponent,
     SkillsComponent,
     FooterComponent,
-    ProyectosComponent
+    ProyectosComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule,FormsModule, BrowserAnimationsModule,MatProgressBarModule,MatButtonModule
+    AppRoutingModule,HttpClientModule,FormsModule, BrowserAnimationsModule,MatProgressBarModule,MatButtonModule,MatCardModule,MatToolbarModule,MatGridListModule
   ],
   providers: [UsuarioService,ExperienciaService,EducacionService,SkillsService,ProyectosService],
   bootstrap: [AppComponent]

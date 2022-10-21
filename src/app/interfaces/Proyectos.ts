@@ -4,6 +4,7 @@ export interface Proyectos{
     descripcion:string;
     resumen:string;
     imglink:string;
+    gitlink:string;
     proyectoCode:string;
 
 }

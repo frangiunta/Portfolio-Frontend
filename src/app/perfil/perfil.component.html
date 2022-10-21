@@ -1,5 +1,5 @@
 
-    <div class="card mat-card" id="first-card" *ngFor="let Usuario of usuarios">
+    <mat-card *ngFor="let Usuario of usuarios">
         <div id="main-container">
             <div class="d-block mx-auto"><img class="img-fluid" src="{{Usuario?.bannerlink}}"></div>
             <section class="bg-dark">
@@ -8,12 +8,12 @@
                        <div class="col-lg-12 mb-4 mb-sm-5">
                            <div class="card card-style1 border-0">
                                <div class="card-body bg-dark p-1-9 p-sm-2-3 p-md-6 p-lg-7" id="gris">
-                                   <div class="row align-items-center" id="gris">
-                                       <div class="col-lg-6 mb-4 mb-lg-0" id="gris">
+                                   <div class="row align-items-center">
+                                       <div class="col-lg-6 mb-4 mb-lg-0">
                                            <img id="fotoperfil"class="center" src={{Usuario?.imgLink}} alt="Francisco Giunta">
                                        </div>
                                        <div class="col-lg-6 px-xl-10" id="gris">
-                                           <div class="d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded" id="gris">
+                                           <div class="d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
                                                <h3 class="mb-0 text-center" id="titulo">{{Usuario?.nombre}}</h3>
                                                <br>
                                                <span class=" text-center" id="subtitulo">{{Usuario?.titulo}}</span>
@@ -22,7 +22,7 @@
                                              <h2 id="texto" style="color:violet">{{Usuario?.resumen}}</h2>
                                            </div>
                                            <div class="float-right btn-group btn-group-sm">
-                                             <a (click)="onOpenModal(Usuario, 'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil">Editar</i> </a>
+                                             <button mat-button color="accent" (click)="onOpenModal(Usuario, 'edit')">Editar</button>
                                           </div>
                                        </div>
                                    </div>
@@ -30,11 +30,12 @@
                            </div>
                        </div>
              </div>
+               </div>
+            </section>
+         
 
 
 
-
-   </div>
      <!-- Edit Modal -->
      <div class="modal fade" id="updateEmployeeModal" tabindex="-1" aria-labelledby="employeeEditModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">

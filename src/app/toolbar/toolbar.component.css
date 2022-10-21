@@ -1,15 +1,8 @@
-div{
-  width: 100%;
-  background-color:rgba(18, 18, 18, 0.914);
+#imgbanner
+{
+    height: 80px;
+    width: 130px;
 }
-
-app-redes{
-  display: block;
-margin-block:0px;
-    margin: 30px;
-    float: right;
-}
-#icon{
-  height: 30px;
-  width: 30px;
+#login{
+    align-content: right;
 }

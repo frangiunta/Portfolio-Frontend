@@ -1,6 +1,8 @@
-
+<mat-card>   
+   <br>
+   <h1 class="text-center">Educacion</h1>
  <div class="div grisoscuro main-container" *ngFor="let Educacion of educaciones">
-   
+   <br>
     <div class="text-center gris">
        <a> <img src={{Educacion.imgUrl}}></a>
         <br>
@@ -15,7 +17,11 @@
       </div>
     </div>
  </div>
- <a (click)="onOpenModal(null,'add')" class="btn btn-primary tooltips"><i class="fa fa-plus"><span class="sr-only">Agregar Educacion</span></i></a>
+ <div> <button mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Educacion</button>
+ </div>
+</mat-card>
+
+
  <div class="modal fade" id="updateEducacion" tabindex="-1" aria-labelledby="employeeEditModalLabel" aria-hidden="true">
    <div class="modal-dialog" role="document">
       <div class="modal-content">

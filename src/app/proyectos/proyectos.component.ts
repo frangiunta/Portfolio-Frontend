@@ -3,6 +3,8 @@ import {Proyectos} from 'src/app/interfaces/Proyectos';
 import { ProyectosService } from '../servicios/proyectos.service';
 import { NgForm } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-proyectos',
@@ -90,7 +92,7 @@ export class ProyectosComponent implements OnInit{
     
       if (mode === 'delete') {
         this.deleteProyectos = proyecto;
-        button.setAttribute('data-target', '#deleteProyecto');
+        button.setAttribute('data-target', '#deleteProyectos');
       }
       container.appendChild(button);
       button.click();

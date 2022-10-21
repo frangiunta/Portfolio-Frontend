@@ -9,6 +9,5 @@
 .imagen{
     height: 225px;
     width: 225px;
+    margin: 30px;
 }
-h1{
-    text-shadow: -1px 0 rgb(244, 0, 171), 0 1px rgb(244, 0, 171), 1px 0 rgb(255, 0, 166), 0 -1px rgb(255, 0, 183);}

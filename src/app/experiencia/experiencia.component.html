@@ -1,8 +1,12 @@
 
+ <mat-card color="black">
+
  <div class="div grisoscuro main-container" *ngFor="let Experiencia of experiencias">
-   
+   <br>
+   <h1 class="text-center">Experiencia</h1>
     <div class="text-center gris">
-       <a> <img src={{Experiencia.imgUrl}}></a>
+      <BR>
+       <a> <img class="imagen" src={{Experiencia.imgUrl}}></a>
         <br>
         <H1>{{Experiencia.nombre}}</H1>
         <h3>{{Experiencia.empresa}}</h3>
@@ -15,10 +19,13 @@
       </div>
     </div>
  </div>
-
+<div>
+   <button mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Experiencia</button>
+</div>
+</mat-card>
  
- <!-- update Modal -->
- <a (click)="onOpenModal(null,'add')" class="btn btn-primary tooltips"><i class="fa fa-plus"><span class="sr-only">Agregar experiencia</span></i></a>
+
+
  <div class="modal fade" id="updateExperiencia" tabindex="-1" aria-labelledby="employeeEditModalLabel" aria-hidden="true">
    <div class="modal-dialog" role="document">
       <div class="modal-content">
