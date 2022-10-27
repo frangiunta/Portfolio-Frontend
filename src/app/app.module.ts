@@ -24,7 +24,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { PerfilComponent } from './perfil/perfil.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegistroComponent } from './auth/registro/registro.component';
-import { IndexComponent } from './index/index.component';
+import { PerfilService } from './servicios/perfil.service';
+import { AuthService } from './servicios/auth.service';
 
 @NgModule({
   declarations: [
@@ -39,14 +40,13 @@ import { IndexComponent } from './index/index.component';
     ToolbarComponent,
     PerfilComponent,
     LoginComponent,
-    RegistroComponent,
-    IndexComponent
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,HttpClientModule,FormsModule, BrowserAnimationsModule,MatProgressBarModule,MatButtonModule,MatCardModule,MatToolbarModule,MatGridListModule
   ],
-  providers: [ExperienciaService,EducacionService,SkillsService,ProyectosService],
+  providers: [ExperienciaService,EducacionService,SkillsService,ProyectosService,PerfilService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

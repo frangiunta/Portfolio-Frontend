@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatToolbar } from '@angular/material/toolbar';
+import { TokenService } from '../servicios/token.service';
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
@@ -7,9 +8,21 @@ import { MatToolbar } from '@angular/material/toolbar';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  isLogged = false;
 
-  ngOnInit(): void {
+  constructor(private tokenService: TokenService) { }
+
+  ngOnInit() {
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+  }
+
+  onLogOut(): void {
+    this.tokenService.logOut();
+    window.location.reload();
   }
 
 }
