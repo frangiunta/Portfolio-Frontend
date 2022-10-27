@@ -1,0 +1,55 @@
+@keyframes fadeIn {
+
+    0% {
+        color: black;
+        opacity:0;
+    }
+    100% {
+        color:rgb(215, 111, 215);
+        opacity:1;}
+    }
+    @keyframes zoomIn {
+        0% {width: 0px; height: 0px;}
+        100% {width: 270px; height: 300px;}
+        }
+        @keyframes ColorChange{
+            0%{color: rgb(243, 62, 243);}
+            100%{color:rgb(111, 0, 255);}
+        }
+#titulo
+{   line-height: normal;
+    animation: fadeIn 3s;
+    font-size: 60px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    color: rgb(215, 111, 215);}
+#subtitulo
+{  line-height: normal;
+     animation: fadeIn 5s;
+    color: rgb(215, 111, 215);
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+#fotoperfil
+{ 
+    animation: zoomIn 2s;  
+    border-style: solid;
+    border-color: rgb(159, 82, 159);
+    width: 270px;
+    height: 300px;
+}
+#texto
+{animation: fadeIn 7s;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#gris
+{
+    background-color: rgb(22, 21, 21);
+    
+}
+#banner{
+    display: block;
+}
+#borde{
+
+    border-color: black;
+    border-style:groove;
+    border-width: 3px;
+}

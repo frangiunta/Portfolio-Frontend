@@ -1,0 +1,140 @@
+
+ <div class="card mat-card" id="first-card">
+   <h1 class="text-center">Proyectos</h1>
+   <div id="main-container" id="blackbackground">
+       <section class="bg-dark">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12 mb-4 mb-sm-5">
+                      <div class="card card-style1 border-0">
+                          <div class="card-body bg-dark p-1-9 p-sm-2-3 p-md-6 p-lg-7" id="gris">
+                              <div class="row align-items-center" id="gris">
+                                  <div class="col-lg-6 mb-4 mb-lg-0" id="gris">
+                                      <img id="imgproyecto"class="center" src={{proyecto?.imglink}} alt="Francisco Giunta">
+                                  </div>
+                                  <div class="col-lg-6 px-xl-10" id="gris">
+                                      <div class="d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded" id="gris">
+                                          <h3 class="mb-0 text-center" id="titulo">{{proyecto?.nombre}}</h3>
+                                          <br>
+                                          <span class=" text-center" id="subtitulo">{{proyecto?.descripcion}}</span>
+                                     <br></div>
+                                      <div id="gris">
+                                        <h2 id="texto" style="color:violet">{{proyecto?.resumen}}</h2>
+                                      </div>
+                                      <a></a>
+                                      <div class="float-right btn-group btn-group-sm">
+                                        <a (click)="onOpenModal(proyecto, 'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil">Editar</i> </a>
+                                        <a (click)="onOpenModal(proyecto,'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times">Borrar</i></a>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+       </section>
+   </div>
+<div>
+    <button mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Proyecto</button>
+</div>
+
+
+
+
+
+<div class="modal fade" id="addProyecto" role="dialog" tabindex="-1" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="addEmployeeModalLabel">Agregar Proyecto</h5>
+            <span class="close" data-dismiss="modal" aria-label="Close">&times;</span>
+         </div>
+         <div class="modal-body">
+            <form #addForm="ngForm" (ngSubmit)="onAddProyecto(addForm)">
+               <div class="form-group">
+                  <label for="name">Nombre</label>
+                  <input type="text" ngModel name="nombre" class="form-control" id="nombre" placeholder="Ingrese el nombre" required>
+               </div>
+               <div class="form-group">
+                <label for="email">Descripcion</label>
+                <input type="text" ngModel name="descripcion" class="form-control" id="descripcion" placeholder="Descripcion breve" required>
+             </div>
+             <div class="form-group">
+                <label for="email">Resumen</label>
+                <input type="text" ngModel name="resumen" class="form-control" id="resumen" placeholder="Resumen breve" required>
+             </div>
+             <div class="form-group">
+                <label for="email">Link de img</label>
+                <input type="text" ngModel name="imglink" class="form-control" id="imglink" placeholder="Imagen del proyecto" required>
+             </div>
+             <div class="form-group">
+               <label for="email">Link del proyecto de Github</label>
+               <input type="text" ngModel name="gitlink" class="form-control" id="gitlink" placeholder="Link de Github" required>
+            </div>
+             <div class="modal-footer">
+                <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Guardar</button>
+               <button type="button" id="add-experiencia-form" class="btn btn-secondary no" data-dismiss="modal">Cancelar</button>
+     
+            </div>
+          </form>
+       </div>
+      </div>
+    </div>
+ </div>
+
+ <div class="modal fade" id="updateProyecto" tabindex="-1" aria-labelledby="employeeEditModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+       <div class="modal-content">
+          <div class="modal-header">
+             <h5 class="modal-title" id="updateEmployeeModalLabel">Editar experiencia</h5>
+             <span class="close" data-dismiss="modal" aria-label="Close">&times;</span>
+          </div>
+          <div class="modal-body">
+             <form #editForm="ngForm">
+                <div class="form-group">
+                   <label for="name">Cargo</label>
+                   <input type="text" ngModel="{{editProyectos?.nombre}}" name="nombre" class="form-control" id="nombre" aria-describedby="emailHelp" placeholder="Ingrese el nombre del proyecto">
+                </div>
+                <input type="hidden" ngModel="{{editProyectos?.id}}" name="id" class="form-control" id="id" placeholder="Email">
+                <div class="form-group">
+                   <label for="name">Descripcion</label>
+                   <input type="text" ngModel="{{editProyectos?.descripcion}}" name="descripcion" class="form-control" id="descripcion" placeholder="Resumen">
+                </div>
+                <div class="form-group">
+                   <label for="phone">Resumen</label>
+                   <input type="text" ngModel="{{editProyectos?.resumen}}" name="resumen" class="form-control" id="resumen" placeholder="Ingrese un breve resumen">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Link de la imagen</label>
+                    <input type="text" ngModel="{{editProyectos?.imglink}}" name="imglink" class="form-control" id="imglink" placeholder="Ingrese la URL de la imagen">
+                 </div>
+                <div class="modal-footer">
+                   <button type="button" id="" data-dismiss="modal" class="btn btn-secondary no">Cancelar</button>
+                   <button (click)="onUpdateProyecto(editForm.value)" data-dismiss="modal" class="btn btn-primary">Guardar cambios</button>
+                </div>
+             </form>
+          </div>
+       </div>
+    </div>
+ </div>
+
+ <div class="modal fade" id="deleteProyectos" tabindex="-1" role="dialog" aria-labelledby="employeedeleteModelLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+       <div class="modal-content">
+          <div class="modal-header">
+             <h5 class="modal-title" id="deleteModelLabel">Delete Employee</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+             </button>
+          </div>
+          <div class="modal-body">
+             <p>¿Esta seguro que desea borrar {{deleteProyectos?.nombre}}?</p>
+             <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button (click)="onDeleteProyecto(deleteProyectos.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+             </div>
+          </div>
+       </div>
+    </div>
+  </div>
