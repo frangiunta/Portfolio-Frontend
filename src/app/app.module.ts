@@ -2,14 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PerfilComponent } from './perfil/perfil.component';
 import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { EducacionComponent } from './educacion/educacion.component';
 import { BannerComponent } from './banner/banner.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { SkillsComponent } from './skills/skills.component';
 import { FooterComponent } from './footer/footer.component';
-import { UsuarioService } from './servicios/usuario.service';
 import { ExperienciaService } from './servicios/experiencia.service';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 import { SkillsService } from 'src/app/servicios/skills.service';
@@ -23,24 +21,32 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { PerfilComponent } from './perfil/perfil.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegistroComponent } from './auth/registro/registro.component';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PerfilComponent,
+
     ExperienciaComponent,
     EducacionComponent,
     BannerComponent,
     SkillsComponent,
     FooterComponent,
     ProyectosComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    PerfilComponent,
+    LoginComponent,
+    RegistroComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,HttpClientModule,FormsModule, BrowserAnimationsModule,MatProgressBarModule,MatButtonModule,MatCardModule,MatToolbarModule,MatGridListModule
   ],
-  providers: [UsuarioService,ExperienciaService,EducacionService,SkillsService,ProyectosService],
+  providers: [ExperienciaService,EducacionService,SkillsService,ProyectosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
