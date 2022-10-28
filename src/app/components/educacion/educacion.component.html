@@ -1,10 +1,11 @@
-<mat-card>   
+<mat-card color="black">   
    <br>
    <h1 class="text-center">Educacion</h1>
  <div id="main-container" *ngFor="let Educacion of educaciones">
    <br>
+
     <div class="text-center gris">
-       <a> <img src={{Educacion.imgUrl}}></a>
+       <a> <img class=imagen src={{Educacion.imgUrl}}></a>
         <br>
         <H1>{{Educacion?.titulo}}</H1>
         <h3>{{Educacion?.institucion}}</h3>
@@ -12,12 +13,12 @@
          <br>
         <br>
         <div class="float-right btn-group btn-group-sm">
-         <a (click)="onOpenModal(Educacion,'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil">Editar</i> </a>
-         <a (click)="onOpenModal(Educacion,'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times">Borrar</i></a>
+         <a *ngIf="isAdmin" (click)="onOpenModal(Educacion,'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil">Editar</i> </a>
+         <a *ngIf="isAdmin" (click)="onOpenModal(Educacion,'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times">Borrar</i></a>
       </div>
     </div>
  </div>
- <div> <button mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Educacion</button>
+ <div> <button *ngIf="isAdmin" mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Educacion</button>
  </div>
 </mat-card>
 

@@ -37,7 +37,7 @@ export class PerfilComponent implements OnInit {
           this.perfiles=response;
           console.log(this.perfiles);}
         ,(error:HttpErrorResponse)=>
-          {alert(error.message)}
+          {}
     );
         }
 

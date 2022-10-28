@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -17,10 +18,18 @@ export class ProyectosComponent implements OnInit{
   public deleteProyectos:Proyectos ;
   public proyecto:Proyectos;
 
-    constructor(private proyectosService:ProyectosService) { }
+  roles: string[] = [];
+  isAdmin = false;
+    constructor(private proyectosService:ProyectosService,private tokenService:TokenService) { }
   
     ngOnInit(): void {
       this.getProyectos();
+      this.roles = this.tokenService.getAuthorities();
+      this.roles.forEach(role => {
+        if (role === 'ROLE_ADMIN') {
+          this.isAdmin = true;
+        }
+      });
     }
   
     public getProyectos():void{
@@ -30,7 +39,7 @@ export class ProyectosComponent implements OnInit{
             this.proyectos=response;
             console.log(this.proyectos);}
           ,(error:HttpErrorResponse)=>
-            {alert(error.message)}
+            {}
       );
           }
   

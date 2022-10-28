@@ -1,10 +1,11 @@
-
+<div style="background-color:black">
 <div class="text center" *ngIf="isLogged; else loggedOut">
-    <h2>ya has iniciado sesión</h2>
+    <h2>Ya has iniciado sesión</h2>
+    <a class="nav-link active" [routerLink]="['/main']"> Volver al inicio</a>
 </div>
 
 <ng-template #loggedOut>
-    <div class="container d-flex justify-content-center">
+    <div class="container content-center">
       <div class="card">
             <div class="card-header">
                 <ul class="nav nav-tabs">
@@ -13,6 +14,7 @@
                    </li>
                 </ul>
             </div>
+            <br>
             <div class="card-body">
                 <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
                     <div class="form-group">
@@ -28,7 +30,7 @@
                     <div class="form-group">
                         <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
                             <i class="fas fa-sign-in-alt"></i>Iniciar Sesión</button>
-                        <button class="btn btn-outline-success btn-block m-2" routerLink="/">Cancelar</button>
+                        <button class="btn btn-outline-success btn-block m-2" routerLink="/main">Cancelar</button>
                     </div>
                 </form>
                 <div *ngIf="f.submitted && isLoginFail" class="alert alert-danger mt-3">Fallo en el login: {{errMsj}}</div>
@@ -36,6 +38,6 @@
         </div>
    </div>
 </ng-template>
-
+</div>
 
 

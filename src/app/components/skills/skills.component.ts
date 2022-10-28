@@ -5,6 +5,7 @@ import { SkillsService } from 'src/app/servicios/skills.service';
 import { Skills } from 'src/app/interfaces/Skills';
 import { NgForm } from '@angular/forms';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { TokenService } from 'src/app/servicios/token.service';
 
 
 @Component({
@@ -17,10 +18,20 @@ public skills:Skills[]=[];
 public editSkills:Skills;
 public deleteSkills:Skills;
 public skill:Skills;
-  constructor(private skillsService:SkillsService) { }
+
+roles: string[] = [];
+isAdmin = false;
+  constructor(private skillsService:SkillsService,private tokenService:TokenService) { }
 
   ngOnInit(): void {
     this.getSkills();
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(role => {
+      if (role === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
+    
   }
 
   public getSkills():void{
@@ -30,7 +41,7 @@ public skill:Skills;
           this.skills=response;
           console.log(this.skills);}
         ,(error:HttpErrorResponse)=>
-          {alert(error.message)}
+          {}
     );
         }
 

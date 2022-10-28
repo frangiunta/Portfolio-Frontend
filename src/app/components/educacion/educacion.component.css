@@ -6,3 +6,8 @@
 {
     background-color: rgb(49, 49, 49);
 }
+.imagen{
+    height: 225px;
+    width: 225px;
+    margin: 30px;
+}

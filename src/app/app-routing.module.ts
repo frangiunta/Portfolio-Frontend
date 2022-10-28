@@ -13,9 +13,8 @@ import { CommonModule } from '@angular/common';
 import { PerfilComponent } from './components/perfil/perfil.component';
 
 const routes: Routes = [
-  {path:'',component:MainComponent},
-  {path:'**',component:MainComponent},
-  {path:'login',component:LoginComponent},
+  {path:'main',component:MainComponent},
+  {path:'',component:LoginComponent},
   {path:'toolbar',component:ToolbarComponent},
   {path:'educacion',component:EducacionComponent},
   {path:'skills',component:SkillsComponent},

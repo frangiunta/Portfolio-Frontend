@@ -3,6 +3,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 import { Experiencia } from 'src/app/interfaces/Experiencia';
 import { NgForm } from '@angular/forms';
+import { TokenService } from 'src/app/servicios/token.service';
 @Component({
   selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',
@@ -14,10 +15,18 @@ export class ExperienciaComponent implements OnInit {
   public deleteExperiencia:Experiencia;
   public experiencia:Experiencia;
 
-  constructor(private experienciaService:ExperienciaService) { }
+  roles: string[] = [];
+  isAdmin = false;
+  constructor(private experienciaService:ExperienciaService,private tokenService:TokenService) { }
 
   ngOnInit(): void {
     this.getExperiencias();
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(role => {
+      if (role === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
 public getExperiencias():void{
   this.experienciaService.GetExperiencia().subscribe
@@ -26,7 +35,7 @@ public getExperiencias():void{
         this.experiencias=response;
         console.log(this.experiencias);}
       ,(error:HttpErrorResponse)=>
-        {alert(error.message)}
+        {}
   );
       }
       public onAddExperiencia(addForm: NgForm): void {
@@ -38,7 +47,6 @@ public getExperiencias():void{
             addForm.reset();
           },
           (error: HttpErrorResponse) => {
-            alert(error.message);
             addForm.reset();
           }
         );
@@ -51,7 +59,6 @@ public getExperiencias():void{
             this.getExperiencias();
           },
           (error: HttpErrorResponse) => {
-            alert(error.message);
           }
         );
       }
@@ -63,7 +70,7 @@ public getExperiencias():void{
             this.getExperiencias();
           },
           (error: HttpErrorResponse) => {
-            alert(error.message);
+            console.log(error)
           }
         );
       }

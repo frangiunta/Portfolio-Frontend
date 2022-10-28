@@ -3,6 +3,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Educacion } from 'src/app/interfaces/Educacion';
 import { EducacionService } from '../../servicios/educacion.service';
 import { NgForm } from '@angular/forms';
+import { TokenService } from 'src/app/servicios/token.service';
 @Component({
   selector: 'app-educacion',
   templateUrl: './educacion.component.html',
@@ -15,10 +16,19 @@ export class EducacionComponent implements OnInit {
   public deleteEducacion:Educacion;
   public educacion:Educacion;
 
-  constructor(private educacionService:EducacionService) { }
+  roles: string[] = [];
+  isAdmin = false;
+
+  constructor(private educacionService:EducacionService,private tokenService:TokenService) { }
 
   ngOnInit(): void {
     this.getEducaciones();
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(role => {
+      if (role === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
 public getEducaciones():void{
   this.educacionService.GetEducacion().subscribe
@@ -27,7 +37,7 @@ public getEducaciones():void{
         this.educaciones=response;
         console.log(this.educaciones);}
       ,(error:HttpErrorResponse)=>
-        {alert(error.message)}
+        {}
   );
       }
       public onAddEducacion(addForm: NgForm): void {

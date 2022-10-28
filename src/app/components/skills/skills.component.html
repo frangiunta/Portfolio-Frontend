@@ -8,13 +8,13 @@
    <mat-progress-bar mode="determinate" value="{{skill.porcentaje}}"></mat-progress-bar>
 <br>
 <div class="float-right btn-group btn-group-sm">
-   <a (click)="onOpenModal(skill,'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil">Editar</i> </a>
-   <a (click)="onOpenModal(skill,'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-pencil">Borrar</i></a>
+   <a *ngIf="isAdmin" (click)="onOpenModal(skill,'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil">Editar</i> </a>
+   <a *ngIf="isAdmin" (click)="onOpenModal(skill,'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-pencil">Borrar</i></a>
 </div>
 </div>
 </div>
 <div>
-<button mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Skill</button>
+<button *ngIf="isAdmin" mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Skill</button>
 </div>
 </mat-card>
 

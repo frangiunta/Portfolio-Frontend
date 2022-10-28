@@ -23,8 +23,8 @@
                                       </div>
                                       <a></a>
                                       <div class="float-right btn-group btn-group-sm">
-                                        <a (click)="onOpenModal(proyecto, 'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil">Editar</i> </a>
-                                        <a (click)="onOpenModal(proyecto,'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times">Borrar</i></a>
+                                        <a *ngIf="isAdmin" (click)="onOpenModal(proyecto, 'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil">Editar</i> </a>
+                                        <a *ngIf="isAdmin" (click)="onOpenModal(proyecto,'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times">Borrar</i></a>
                                     </div>
                                   </div>
                               </div>
@@ -36,7 +36,7 @@
        </section>
    </div>
 <div>
-    <button mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Proyecto</button>
+    <button *ngIf="isAdmin" mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Proyecto</button>
 </div>
 
 
