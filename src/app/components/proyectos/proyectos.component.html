@@ -1,7 +1,7 @@
 
  <div class="card mat-card" id="first-card">
    <h1 class="text-center">Proyectos</h1>
-   <div id="main-container" id="blackbackground">
+   <div *ngFor="let proyecto of proyectos" id="main-container" id="blackbackground">
        <section class="bg-dark">
           <div class="container">
               <div class="row">

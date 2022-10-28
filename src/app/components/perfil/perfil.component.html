@@ -1,6 +1,6 @@
 <mat-card>
     <div *ngFor="let perfil of perfiles" id="main-container">
-    <div class="d-block mx-auto"><img class="img-fluid" src="../../../assets/banner.jpg"></div>
+    <div class="d-block mx-auto"><img class="img-fluid" src={{perfil.bannerlink}}></div>
     <section class="bg-dark">
        <div class="container">
            <div class="row">
@@ -9,7 +9,7 @@
                        <div class="card-body bg-dark p-1-9 p-sm-2-3 p-md-6 p-lg-7" id="gris">
                            <div class="row align-items-center">
                                <div class="col-lg-6 mb-4 mb-lg-0">
-                                   <img id="fotoperfil"class="center" src="../../../assets/20220103_164937.jpg" alt="Francisco Giunta">
+                                   <img id="fotoperfil"class="center" src={{perfil?.imgLink}} alt="Francisco Giunta">
                                </div>
                                <div class="col-lg-6 px-xl-10" id="gris">
                                    <div class="d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
