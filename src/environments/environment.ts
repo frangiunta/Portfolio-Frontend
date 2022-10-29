@@ -4,7 +4,7 @@
 
 export const environment = {
   apiBaseUrl: 'https://portfolio-franciscogiunta.herokuapp.com/',
-  production: true
+  production: false
 };
 
 /*

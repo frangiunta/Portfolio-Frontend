@@ -10,7 +10,7 @@ import { JwtDTO } from '../interfaces/security/jwt-dto';
 })
 export class AuthService {
 
-  authURL = 'http://localhost:8080/auth/';
+  authURL = 'https://portfolio-franciscogiunta.herokuapp.com/auth/';
 
   constructor(private httpClient: HttpClient) { }
 
