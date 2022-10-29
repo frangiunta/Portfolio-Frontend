@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  apiBaseUrl: 'https://portfolio-franciscogiunta.herokuapp.com/',
+  apiBaseUrl: 'https://portfolio-franciscogiunta.herokuapp.com',
   production: false
 };
 
