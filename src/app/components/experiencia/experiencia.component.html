@@ -8,10 +8,12 @@
       <BR>
        <a> <img class="imagen" src={{Experiencia.imgUrl}}></a>
         <br>
+        <mat-card-content>
         <H1>{{Experiencia.nombre}}</H1>
         <h3>{{Experiencia.empresa}}</h3>
         <h4>{{Experiencia.resumen}}</h4>
          <br>
+      </mat-card-content>
         <br>
         <div class="float-right btn-group btn-group-sm">
          <a *ngIf="isAdmin" (click)="onOpenModal(Experiencia,'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil">Editar</i> </a>

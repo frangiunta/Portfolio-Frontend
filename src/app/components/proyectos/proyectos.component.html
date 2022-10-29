@@ -1,40 +1,27 @@
 
- <div class="card mat-card" id="first-card">
-   <h1 class="text-center">Proyectos</h1>
-   <div *ngFor="let proyecto of proyectos" id="main-container" id="blackbackground">
-       <section class="bg-dark">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-12 mb-4 mb-sm-5">
-                      <div class="card card-style1 border-0">
-                          <div class="card-body bg-dark p-1-9 p-sm-2-3 p-md-6 p-lg-7" id="gris">
-                              <div class="row align-items-center" id="gris">
-                                  <div class="col-lg-6 mb-4 mb-lg-0" id="gris">
-                                      <img id="imgproyecto"class="center" src={{proyecto?.imglink}} alt="Francisco Giunta">
+<mat-card>
+   <mat-card-title class="text-center">Proyectos</mat-card-title>
+      <div *ngFor="let proyecto of proyectos" id="main-container" id="blackbackground">
+         <mat-card id="proyecto-card">
+            <mat-card-title-group>
+              <mat-card-title>{{proyecto?.nombre}}</mat-card-title>
+              <mat-card-subtitle>{{proyecto?.descripcion}}</mat-card-subtitle>
+              <img mat-card-image src={{proyecto?.imglink}} >
+            </mat-card-title-group>
+            <mat-card-content>
+              {{proyecto?.resumen}}
+            </mat-card-content>
+            <mat-card-actions>
+               <button mat-stroked-button color="accent" *ngIf="isAdmin" (click)="onOpenModal(proyecto, 'edit')"> Editar</button>
+               <button mat-stroked-button color="accent" *ngIf="isAdmin" (click)="onOpenModal(proyecto, 'delete')"> Borrar</button>
+
+           
+            </mat-card-actions>
+          </mat-card>
+   
                                   </div>
-                                  <div class="col-lg-6 px-xl-10" id="gris">
-                                      <div class="d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded" id="gris">
-                                          <h3 class="mb-0 text-center" id="titulo">{{proyecto?.nombre}}</h3>
-                                          <br>
-                                          <span class=" text-center" id="subtitulo">{{proyecto?.descripcion}}</span>
-                                     <br></div>
-                                      <div id="gris">
-                                        <h2 id="texto" style="color:violet">{{proyecto?.resumen}}</h2>
-                                      </div>
-                                      <a></a>
-                                      <div class="float-right btn-group btn-group-sm">
-                                        <a *ngIf="isAdmin" (click)="onOpenModal(proyecto, 'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil">Editar</i> </a>
-                                        <a *ngIf="isAdmin" (click)="onOpenModal(proyecto,'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times">Borrar</i></a>
-                                    </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-            </div>
-       </section>
-   </div>
+                           
+   
 <div>
     <button *ngIf="isAdmin" mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Proyecto</button>
 </div>
@@ -138,3 +125,4 @@
        </div>
     </div>
   </div>
+</mat-card>
