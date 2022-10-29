@@ -1,6 +1,6 @@
 <mat-card>
    <h1 class="text-center">Skills</h1>
-<div *ngFor="let skill of skills">
+<mat-card id="gris"><div *ngFor="let skill of skills">
    <div>
       <h1>{{skill.nombre}}</h1>
    </div>
@@ -16,6 +16,7 @@
 <div>
 <button *ngIf="isAdmin" mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Skill</button>
 </div>
+</mat-card>
 </mat-card>
 
 
