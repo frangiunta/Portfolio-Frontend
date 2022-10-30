@@ -1,34 +1,39 @@
-
-<mat-card>
+<mat-card style="background-color:rgb(72, 72, 72) ;">   
    <mat-card-title class="text-center">Proyectos</mat-card-title>
-      <div *ngFor="let proyecto of proyectos" id="main-container" id="blackbackground">
-         <mat-card id="proyecto-card">
-            <mat-card-title-group>
-              <mat-card-title>{{proyecto?.nombre}}</mat-card-title>
-              <mat-card-subtitle>{{proyecto?.descripcion}}</mat-card-subtitle>
-              <img mat-card-image src={{proyecto?.imglink}} >
-            </mat-card-title-group>
-            <mat-card-content>
-              {{proyecto?.resumen}}
-            </mat-card-content>
-            <mat-card-actions>
-               <button mat-stroked-button color="accent" *ngIf="isAdmin" (click)="onOpenModal(proyecto, 'edit')"> Editar</button>
-               <button mat-stroked-button color="accent" *ngIf="isAdmin" (click)="onOpenModal(proyecto, 'delete')"> Borrar</button>
+   <br>
+   <mat-card>
+      <div *ngFor="let proyecto of proyectos" id="main-container">
+   <mat-grid-list cols="1" rowHeight="200px">
+      <mat-grid-tile>
+         <br>
+        <a> <img class="center imagen" src={{proyecto?.imglink}}></a>
+        <br>
+      </mat-grid-tile>
+   </mat-grid-list>
+   <br>
+         <mat-card-title class="centrado">
+            {{proyecto?.nombre}}
+         </mat-card-title>
+    <br>
+      <mat-card-title class="centrado">
+         {{proyecto?.descripcion}}
+      </mat-card-title>
+     <br>
+         <mat-card-subtitle class="centrado">
+            {{proyecto?.resumen}}
+         </mat-card-subtitle>
+      <br>
+      <mat-card-actions class="centrado">
+         <button mat-stroked-button color="accent" *ngIf="isAdmin" (click)="onOpenModal(proyecto, 'edit')"> Editar</button>
+         <button mat-stroked-button color="accent" *ngIf="isAdmin" (click)="onOpenModal(proyecto, 'delete')"> Borrar</button>
+      </mat-card-actions>
+   </div> 
+   </mat-card>
+ <div> 
 
-           
-            </mat-card-actions>
-          </mat-card>
-   
-                                  </div>
-                           
-   
-<div>
-    <button *ngIf="isAdmin" mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Proyecto</button>
-</div>
-
-
-
-
+ </div>
+   <button *ngIf="isAdmin" mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Proyecto</button>
+</mat-card>
 
 <div class="modal fade" id="addProyecto" role="dialog" tabindex="-1" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -125,4 +130,3 @@
        </div>
     </div>
   </div>
-</mat-card>

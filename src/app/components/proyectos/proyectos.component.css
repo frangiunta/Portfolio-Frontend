@@ -1,17 +1,17 @@
-#imgproyecto{
-height: 200px;
-width:500px;
-margin-left: 30px;
-margin-top: 30px;
-margin-bottom: 30px;}
-
-.mat-card-content{
-background-color: rgb(67, 67, 67);
+.gris
+{
+    background-color: rgb(145, 145, 145);
 }
-.mat-card-image{
-  width: 300px;
-  height: 200px;
-  margin-left: 30px;
+.grisoscuro
+{
+    background-color: rgb(49, 49, 49);
 }
-#proyecto-card
-{background-color: rgb(67, 67, 67);}
+.imagen{
+    height: 225px;
+    width: 225px;
+    margin: 30px;
+}
+.centrado{
+    display: flex;
+justify-content: center;
+}

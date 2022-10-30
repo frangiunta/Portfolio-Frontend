@@ -1,30 +1,44 @@
 
- <mat-card color="black">
-<br>   <h1 class="text-center">Experiencia</h1>
+<mat-card>
+<br>   
+<mat-card-title class="text-center">Experiencia laboral</mat-card-title>
  <div id="main-container" *ngFor="let Experiencia of experiencias">
    <br>
-
+   <mat-card>
     <div class="text-center gris" id="main-container">
-      <BR>
-       <a> <img class="imagen" src={{Experiencia.imgUrl}}></a>
+   <br>
+      <mat-grid-list cols="1" rowHeight="200px">
+         <mat-grid-tile>
+            <br>
+           <a> <img class="center imagen" src={{Experiencia?.imgUrl}}></a>
+           <br>
+         </mat-grid-tile>
+      </mat-grid-list>
+      <br>
+            <mat-card-title class="centrado">
+               {{Experiencia?.nombre}}
+            </mat-card-title>
+       <br>
+         <mat-card-title class="centrado">
+         {{Experiencia?.empresa}}
+         </mat-card-title>
         <br>
-        <mat-card-content>
-        <H1>{{Experiencia.nombre}}</H1>
-        <h3>{{Experiencia.empresa}}</h3>
-        <h4>{{Experiencia.resumen}}</h4>
+            <mat-card-subtitle class="centrado">
+               {{Experiencia?.resumen}}
+            </mat-card-subtitle>
          <br>
-      </mat-card-content>
         <br>
         <mat-card-actions>
-         <button mat-stroked-button color="accent" *ngIf="isAdmin" (click)="onOpenModal(experiencia, 'edit')"> Editar</button>
-         <button mat-stroked-button color="accent" *ngIf="isAdmin" (click)="onOpenModal(experiencia, 'delete')"> Borrar</button>
+         <button mat-stroked-button color="accent" *ngIf="isAdmin" (click)="onOpenModal(Experiencia, 'edit')"> Editar</button>
+         <button mat-stroked-button color="accent" *ngIf="isAdmin" (click)="onOpenModal(Experiencia, 'delete')"> Borrar</button>
       </mat-card-actions>
-    </div>
+    </div></mat-card>
  </div>
+</mat-card>
 <div>
    <button *ngIf="isAdmin" mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Experiencia</button>
 </div>
-</mat-card>
+
  
 
 

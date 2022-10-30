@@ -1,26 +1,35 @@
-<mat-card color="black">   
+<mat-card style="background-color:rgb(72, 72, 72) ;">   
+   <mat-card-title class="text-center">Educacion</mat-card-title>
    <br>
-   <h1 class="text-center">Educacion</h1>
  <div id="main-container" *ngFor="let Educacion of educaciones">
-   <br>
-
-    <div class="text-center gris">
-       <a> <img class=imagen src={{Educacion.imgUrl}}></a>
-        <br>
-        <H1>{{Educacion?.titulo}}</H1>
-        <h3>{{Educacion?.institucion}}</h3>
-        <h4>{{Educacion?.fecha}}</h4>
+   <mat-card>
+   <mat-grid-list cols="1" rowHeight="200px">
+      <mat-grid-tile>
          <br>
+        <a> <img class="center imagen" src={{Educacion?.imgUrl}}></a>
         <br>
-      <mat-card-actions>
+      </mat-grid-tile>
+   </mat-grid-list>
+   <br>
+         <mat-card-title class="centrado">
+            {{Educacion?.titulo}}
+         </mat-card-title>
+    <br>
+      <mat-card-title class="centrado">
+      {{Educacion?.institucion}}
+      </mat-card-title>
+     <br>
+         <mat-card-subtitle class="centrado">
+            {{Educacion?.fecha}}
+         </mat-card-subtitle>
+      <br>
+      <mat-card-actions class="centrado">
          <button mat-stroked-button color="accent" *ngIf="isAdmin" (click)="onOpenModal(Educacion, 'edit')"> Editar</button>
          <button mat-stroked-button color="accent" *ngIf="isAdmin" (click)="onOpenModal(Educacion, 'delete')"> Borrar</button>
-
-     
       </mat-card-actions>
-    </div>
- </div>
- <div> <button *ngIf="isAdmin" mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Educacion</button>
+   </mat-card>
+ <div> </div>
+   <button *ngIf="isAdmin" mat-button color="accent" (click)="onOpenModal(null,'add')">Agregar Educacion</button>
  </div>
 </mat-card>
 

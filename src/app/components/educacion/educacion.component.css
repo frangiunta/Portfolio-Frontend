@@ -11,3 +11,7 @@
     width: 225px;
     margin: 30px;
 }
+.centrado{
+    display: flex;
+justify-content: center;
+}
