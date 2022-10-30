@@ -15,10 +15,10 @@
          <br>
       </mat-card-content>
         <br>
-        <div class="float-right btn-group btn-group-sm">
-         <a *ngIf="isAdmin" (click)="onOpenModal(Experiencia,'edit')" class="btn btn-primary tooltips" data-placement="top" data-original-title="Edit"><i class="fa fa-pencil">Editar</i> </a>
-         <a *ngIf="isAdmin" (click)="onOpenModal(Experiencia,'delete')" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete"><i class="fa fa-times">Borrar</i></a>
-      </div>
+        <mat-card-actions>
+         <button mat-stroked-button color="accent" *ngIf="isAdmin" (click)="onOpenModal(experiencia, 'edit')"> Editar</button>
+         <button mat-stroked-button color="accent" *ngIf="isAdmin" (click)="onOpenModal(experiencia, 'delete')"> Borrar</button>
+      </mat-card-actions>
     </div>
  </div>
 <div>
